@@ -22,7 +22,7 @@
 </header>
 <main id="content">
 <h1>FIGHTR Privacy Policy</h1>
-<p><strong>Last updated:</strong> 25 October 2026<br>
+<p><strong>Last updated:</strong> 26 October 2026<br>
 <strong>App:</strong> FIGHTR (com.fightr.app)<br>
 <strong>Operator:</strong> Nishant Agrawal<br>
 <strong>Contact:</strong> <a href="mailto:fightrclubb@gmail.com">fightrclubb@gmail.com</a></p>
@@ -61,7 +61,7 @@
 <p>We do <strong>not</strong> collect precise location, contacts, microphone audio, an advertising ID or payment information. We do not use analytics or advertising SDKs. We do not hold a push notification token: reminders are scheduled on your phone.</p>
 
 <h2 id="club">2a. Who can see your Club content</h2>
-<p>Club is optional. New Club profiles start <strong>private</strong>: only followers you approve see your posts, Arise and Aura videos. If you make your profile public, anyone signed in to FIGHTR can see them. Your username, name and profile photo are visible to signed-in users so they can find you. Arise stories disappear after 24 hours (you keep them in your own archive). Chat messages are visible to the people in that chat. Club media is stored privately and served with short-lived links. Your fitness data, photos and AI chats are never shown in Club unless you post them. Content must follow the <a href="community.html">Club rules</a>; we review reports and may remove content or suspend accounts.</p>
+<p>Club is optional. New Club profiles start <strong>private</strong>: only followers you approve see your posts, Arise and Aura videos. If you make your profile public, anyone signed in to FIGHTR can see them. Your username, name and profile photo are visible to signed-in users so they can find you. Arise stories disappear after 24 hours (you keep them in your own archive). Chat messages are visible to the people in that chat. Club photos and videos are stored privately (Supabase and Cloudflare) and served with short-lived links. Your fitness data, photos and AI chats are never shown in Club unless you post them. Content must follow the <a href="community.html">Club rules</a>; we review reports and may remove content or suspend accounts.</p>
 
 <h2 id="use">3. How we use it</h2>
 <p>To run the app, build and adjust your plans, show your Club content to the people you allow, order your Club Feed and Aura, review reports, restore your data after a reinstall, send the reminders you set, protect against abuse (for example per-user AI limits) and fix errors. We do not sell your data, show ads, or use health data for advertising.</p>
@@ -89,7 +89,7 @@
 <li><strong>DeepSeek:</strong> the AI coach (section 4).</li>
 <li><strong>Google:</strong> Google Sign-In, if you choose it.</li>
 <li><strong>USDA FoodData Central and Open Food Facts:</strong> the food text you search for, and your IP address.</li>
-<li><strong>Cloudflare R2:</strong> downloads of Aura videos and preset avatars (your IP address is visible to it).</li>
+<li><strong>Cloudflare (R2 storage and Workers):</strong> stores the photos and videos you share in Club in a private bucket, and serves preset avatars and banners. Club files are only handed out through short-lived links after our server checks who may see them. Your IP address is visible to Cloudflare when files load.</li>
 <li><strong>Google Fonts:</strong> font files may download on first use, which shows your IP address to Google.</li>
 </ul>
 <p>Exercise and recipe links open in your browser or the YouTube app when you tap them. If you share an image through the Android share sheet, that is your choice and goes to the app you pick. We may also disclose data when the law requires it or in a business transfer. We never sell it.</p>
@@ -119,7 +119,7 @@
 <p>Nishant Agrawal, <a href="mailto:fightrclubb@gmail.com">fightrclubb@gmail.com</a></p>
 </main>
 <footer>
-<p>Last updated: 25 October 2026. Contact: <a href="mailto:fightrclubb@gmail.com">fightrclubb@gmail.com</a></p>
+<p>Last updated: 26 October 2026. Contact: <a href="mailto:fightrclubb@gmail.com">fightrclubb@gmail.com</a></p>
 </footer>
 </body>
 </html>
