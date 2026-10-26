@@ -37,7 +37,7 @@
 <tr><td>Progress photos and optional profile photos</td><td>Use analytics or tracking SDKs</td></tr>
 <tr><td>Your AI coach chats and plans</td><td>Collect precise location, contacts or microphone audio</td></tr>
 <tr><td>Club: what you post and share, who you follow, chats</td><td>Show your Club posts to people you did not allow (private accounts)</td></tr>
-<tr><td>Reminders you set</td><td>Collect payment information (this version has no purchases)</td></tr>
+<tr><td>Reminders you set, and a push token for Club notifications</td><td>Collect payment information (this version has no purchases)</td></tr>
 <tr><td>Basic error reports (error type, code, time, account id)</td><td>Send your email or photos to the AI provider</td></tr>
 </tbody>
 </table>
@@ -56,9 +56,10 @@
 <li><strong>AI chat:</strong> everything you type to the coach, your answers to its questions and the plans it produces.</li>
 <li><strong>Reminders:</strong> the reminders you set.</li>
 <li><strong>Club (optional):</strong> your Club username, name, bio, link, profile photo and banner; the posts, photos, videos, Arise stories, Aura videos, captions and comments you share; likes, saves, follows, close friends, mutes, blocks and reports; chat messages you send and when you read them; who viewed your Arise; and in-app activity in Club (which posts and videos you view, how long you watch, shares and profile visits) used only to order your Feed, Aura and Explore. This activity is first-party and never sold or used for ads.</li>
+<li><strong>Push token (Club):</strong> a Firebase Cloud Messaging token for your phone, linked to your account, so we can tell you about likes, comments, follows and messages. It is removed when you sign out or delete your account.</li>
 <li><strong>Technical:</strong> IP address and request logs kept by our hosting provider and the providers below, and basic error reports (error type and code, a fatal flag, time and your account id; no chat text, no health values and no stack traces).</li>
 </ul>
-<p>We do <strong>not</strong> collect precise location, contacts, microphone audio, an advertising ID or payment information. We do not use analytics or advertising SDKs. We do not hold a push notification token: reminders are scheduled on your phone.</p>
+<p>We do <strong>not</strong> collect precise location, contacts, microphone audio, an advertising ID or payment information. We do not use analytics or advertising SDKs. Reminders are scheduled on your phone. If you use Club, we store a push notification token for your phone (section 6a).</p>
 
 <h2 id="club">2a. Who can see your Club content</h2>
 <p>Club is optional. New Club profiles start <strong>private</strong>: only followers you approve see your posts, Arise and Aura videos. If you make your profile public, anyone signed in to FIGHTR can see them. Your username, name and profile photo are visible to signed-in users so they can find you. Arise stories disappear after 24 hours (you keep them in your own archive). Chat messages are visible to the people in that chat. Club photos and videos are stored privately (Supabase and Cloudflare) and served with short-lived links. Your fitness data, photos and AI chats are never shown in Club unless you post them. Content must follow the <a href="community.html">Club rules</a>; we review reports and may remove content or suspend accounts.</p>
@@ -79,7 +80,7 @@
 
 <h2 id="health">5. Health Connect and step data (limited use)</h2>
 <p>FIGHTR reads <strong>step counts only</strong> from Health Connect (the READ_STEPS permission), and only after you allow it. We use this data only to show your daily steps and step goals inside the app. We do not sell it, do not use it for advertising, credit or insurance decisions, and do not transfer it to others except to run the service (our database host) or when the law requires it. People at FIGHTR do not read it except with your consent, to investigate abuse or security issues, or to comply with law.</p>
-<p>Steps are stored in your account as daily totals and hourly buckets. While you have step tracking on, a foreground service counts steps from the phone's step sensor and shows an ongoing notification; it needs the activity recognition permission. You can revoke permission at any time in Health Connect or Android settings.</p>
+<p>Steps are stored in your account as daily totals and hourly buckets. While you have step tracking on, the app reads the phone's step sensor when it is open, about every 15 minutes in the background and after a restart, and may use Google Play services' on-device step recording (that data stays on your phone). No ongoing notification is shown. This needs the activity recognition permission. You can revoke permission at any time in Health Connect or Android settings.</p>
 <p>FIGHTR's use of information received from Health Connect adheres to the Google Play User Data policy, including the Limited Use requirements.</p>
 
 <h2 id="sharing">6. Who we share data with</h2>
@@ -91,7 +92,11 @@
 <li><strong>USDA FoodData Central and Open Food Facts:</strong> the food text you search for, and your IP address.</li>
 <li><strong>Cloudflare (R2 storage and Workers):</strong> stores the photos and videos you share in Club in a private bucket, and serves preset avatars and banners. Club files are only handed out through short-lived links after our server checks who may see them. Your IP address is visible to Cloudflare when files load.</li>
 <li><strong>Google Fonts:</strong> font files may download on first use, which shows your IP address to Google.</li>
+<li><strong>Google Firebase Cloud Messaging:</strong> delivers Club push notifications (section 6a).</li>
 </ul>
+
+<h3 id="push">6a. Club push notifications</h3>
+<p>When someone likes, comments on or replies to your post, follows you, mentions you or sends you a message, our server asks Google Firebase Cloud Messaging to show a notification on your phone. Google receives your push token and the notification text, for example "@sam liked your post" or "@sam: Sent you a message". <strong>Message text is never sent to Google.</strong> People you muted or blocked do not trigger pushes. You can turn Club notifications off in Android settings (FIGHTR, Notifications, Club). The token is deleted when you sign out or delete your account.</p>
 <p>Exercise and recipe links open in your browser or the YouTube app when you tap them. If you share an image through the Android share sheet, that is your choice and goes to the app you pick. We may also disclose data when the law requires it or in a business transfer. We never sell it.</p>
 <p>Profile and cover photos are served from a storage address that is not login-protected: anyone who has the exact link can open it. Progress photos are private and use short-lived links.</p>
 
