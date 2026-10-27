@@ -15,6 +15,7 @@
 <ul>
 <li><a href="index.html">FIGHTR</a></li>
 <li><a href="privacy.html" aria-current="page">Privacy Policy</a></li>
+<li><a href="terms.html">Terms</a></li>
 <li><a href="community.html">Club rules</a></li>
 <li><a href="delete-account.html">Delete your account</a></li>
 </ul>
@@ -22,7 +23,7 @@
 </header>
 <main id="content">
 <h1>FIGHTR Privacy Policy</h1>
-<p><strong>Last updated:</strong> 12 November 2026<br>
+<p><strong>Last updated:</strong> 13 November 2026<br>
 <strong>App:</strong> FIGHTR (com.fightr.app)<br>
 <strong>Operator:</strong> Nishant Agrawal<br>
 <strong>Contact:</strong> <a href="mailto:fightrclubb@gmail.com">fightrclubb@gmail.com</a></p>
@@ -34,11 +35,11 @@
 <tbody>
 <tr><td>Your account (email, or Google sign-in)</td><td>Sell your data</td></tr>
 <tr><td>Profile, workouts, meals, water, skin and hair care, body measurements, steps</td><td>Show ads or use advertising IDs</td></tr>
-<tr><td>Progress photos and optional profile photos</td><td>Use analytics or tracking SDKs</td></tr>
+<tr><td>Progress photos and optional profile photos</td><td>Use analytics, advertising or tracking SDKs (Firebase Crashlytics is used only for crash reports)</td></tr>
 <tr><td>Your AI coach chats and plans</td><td>Collect precise location or contacts</td></tr>
 <tr><td>Club: what you post and share, who you follow, chats (text, photos, videos and voice messages)</td><td>Show your Club posts to people you did not allow (private accounts)</td></tr>
 <tr><td>Reminders you set, and a push token for Club notifications</td><td>Collect payment information (this version has no purchases)</td></tr>
-<tr><td>Basic error reports (error type, code, time, account id)</td><td>Send your email or photos to the AI provider</td></tr>
+<tr><td>Error and crash reports (error type, stack trace, device model, OS and app version, a pseudonymous account id)</td><td>Send your email or photos to the AI provider</td></tr>
 </tbody>
 </table>
 </div>
@@ -63,7 +64,7 @@
 <li><strong>Push notifications (Club):</strong> a Firebase Cloud Messaging token for your phone, linked to your account, so we can tell you about likes, comments, follows and messages. It is removed when you sign out or delete your account.</li>
 <li><strong>Technical:</strong> IP address and request logs kept by our hosting provider and the providers below, and basic error reports (error type and code, a fatal flag, time and your account id; no chat text, no health values and no stack traces).</li>
 </ul>
-<p>We do <strong>not</strong> collect your device location (Club places are typed by you and rounded to about 1 km), contacts, an advertising ID or payment information. We never record audio in the background. We do not use analytics or advertising SDKs. Reminders are scheduled on your phone. If you use Club, we store a push notification token for your phone (section 6a).</p>
+<p>We do <strong>not</strong> collect your device location (Club places are typed by you and rounded to about 1 km), contacts, an advertising ID or payment information. We never record audio in the background. We do not use analytics or advertising SDKs; Firebase Crashlytics is used only to receive crash reports (section 2). Reminders are scheduled on your phone. If you use Club, we store a push notification token for your phone (section 6a).</p>
 
 <h2 id="club">2a. Who can see your Club content</h2>
 <p>Club is optional. New Club profiles start <strong>private</strong>: only followers you approve see your posts, Arise and Aura videos. If you make your profile public, anyone signed in to FIGHTR can see them. Your username, name and profile photo are visible to signed-in users so they can find you. Arise stories disappear after 24 hours (you keep them in your own archive). Chat messages, including chat photos, videos and voice messages, are visible only to the people in that chat. Club photos and videos are stored privately (Supabase and Cloudflare) and served with short-lived links. Your fitness data, photos and AI chats are never shown in Club unless you post them, with two exceptions you control: in a <strong>friend challenge</strong> you joined, the other members see your days hit and your total for that challenge (never the underlying workouts, meals or logs); and people who follow you can see your <strong>weekly Chakra and current streak</strong> on their friends leaderboard, unless you turn off Settings, Friends, "Show me on friends' leaderboards" (hiding Chakra or streak on your Club profile also hides it there). Private accounts appear only to approved followers; blocked people never see you. Content must follow the <a href="community.html">Club rules</a>; we review reports and may remove content or suspend accounts.</p>
@@ -114,10 +115,10 @@
 <p>Data is stored on Supabase. It is encrypted in transit (HTTPS). Row-level security means you can only reach your own records. Server secrets never reach the app, and AI requests are rate-limited per account. A copy of some data is cached on your phone. You can turn on an optional biometric lock for the AI section; we never receive biometric data. No system is perfectly secure.</p>
 
 <h2 id="retention">8. Retention</h2>
-<p>We keep account data until you delete it or your account. Error reports and AI usage counters are tied to your account; error reports older than 90 days and AI usage counters older than 7 days are purged. Backups age out under our hosting plan. Data sent to AI and food-search providers follows their policies. A photo you delete is removed from storage. Photos, videos and voice messages you sent in Club chats are deleted with your account. A small amount of old AI chat text from an earlier version of the app may remain in an archive table until your account is deleted.</p>
+<p>We keep account data until you delete it or your account. Error reports and AI usage counters are tied to your account; error reports older than 90 days and AI usage counters older than 7 days are purged. Firebase Crashlytics keeps crash reports for 90 days. Backups age out under our hosting plan. Data sent to AI and food-search providers follows their policies. A photo you delete is removed from storage. Photos, videos and voice messages you sent in Club chats are deleted with your account. A small amount of old AI chat text from an earlier version of the app may remain in an archive table until your account is deleted.</p>
 
 <h2 id="rights">9. Your rights and choices</h2>
-<p>In the app you can edit your profile, delete individual photos, reset your progress, change reminders, revoke permissions and delete your account permanently (Settings, Delete Account Permanently, type DELETE).</p>
+<p>In the app you can edit your profile, delete individual photos, reset your progress, change reminders, revoke permissions, turn off crash reports and delete your account permanently (Settings, Delete Account Permanently, type DELETE).</p>
 <p>There is no in-app data export. To ask for a copy of your data, or to correct it, email <a href="mailto:fightrclubb@gmail.com">fightrclubb@gmail.com</a>; we will reply within 30 days. If you cannot open the app, email us from your account address or use the <a href="delete-account.html">delete account page</a> to ask for deletion.</p>
 <p>Depending on where you live (for example under GDPR, UK GDPR, India's DPDP Act or California law) you may have rights to access, correct or erase your data, to withdraw consent and to complain to a regulator. Our grievance contact is <a href="mailto:fightrclubb@gmail.com">fightrclubb@gmail.com</a>.</p>
 
@@ -134,7 +135,7 @@
 <p>Nishant Agrawal, <a href="mailto:fightrclubb@gmail.com">fightrclubb@gmail.com</a></p>
 </main>
 <footer>
-<p>Last updated: 12 November 2026. Contact: <a href="mailto:fightrclubb@gmail.com">fightrclubb@gmail.com</a></p>
+<p>Last updated: 13 November 2026. Contact: <a href="mailto:fightrclubb@gmail.com">fightrclubb@gmail.com</a></p>
 </footer>
 </body>
 </html>
