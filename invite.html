@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Join me on FIGHTR</title>
+<meta name="description" content="A friend invited you to FIGHTR. Get the app and use their invite code.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header>
+<nav aria-label="Legal pages">
+<ul>
+<li><a href="index.html">FIGHTR</a></li>
+<li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="community.html">Club rules</a></li>
+<li><a href="delete-account.html">Delete your account</a></li>
+</ul>
+</nav>
+</header>
+<main id="content">
+<h1>Fight yourself with me on FIGHTR</h1>
+<p>A friend invited you to FIGHTR: an AI coach that turns your goals into a workout, diet and care plan, then tracks every day.</p>
+<p id="code-line" hidden>Your invite code: <strong id="code" style="font-size:1.6em;letter-spacing:0.15em"></strong></p>
+<p><a id="get" href="https://play.google.com/store/apps/details?id=com.fightr.app"><strong>Get FIGHTR on Google Play</strong></a></p>
+<p id="open-line" hidden><a id="open" href="com.fightr.app://app/invite">Already have FIGHTR? Open it and add the code</a></p>
+<h2>How the invite works</h2>
+<ul>
+<li>Enter the code during setup (last question) or in Settings, Friends, "Enter an invite code", within 7 days of signing up.</li>
+<li>When you activate your first plan, you and your friend each get +300 Chakra.</li>
+<li>One code per new account. Your own code does not count.</li>
+</ul>
+<p>FIGHTR is for adults aged 18 and over. See the <a href="privacy.html">Privacy Policy</a>.</p>
+</main>
+<footer>
+<p>Last updated: 11 November 2026. Contact: <a href="mailto:fightrclubb@gmail.com">fightrclubb@gmail.com</a></p>
+</footer>
+<script>
+(function () {
+  var raw = new URLSearchParams(window.location.search).get('code') || '';
+  var code = raw.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8);
+  if (!/^[A-HJ-NP-Z2-9]{6}$/.test(code)) return;
+  document.getElementById('code').textContent = code;
+  document.getElementById('code-line').hidden = false;
+  document.getElementById('get').href =
+    'https://play.google.com/store/apps/details?id=com.fightr.app&referrer=' + encodeURIComponent(code);
+  document.getElementById('open').href = 'com.fightr.app://app/invite?code=' + encodeURIComponent(code);
+  document.getElementById('open-line').hidden = false;
+})();
+</script>
+</body>
+</html>
